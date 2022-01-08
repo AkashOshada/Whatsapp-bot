@@ -14,7 +14,8 @@ class bot():
     
     def __init__(self):
         #Start the whatsapp
-        self.driver = webdriver.Chrome(service=Service('C:\Program Files (x86)/chromedriver.exe')) 
+        
+        self.driver = webdriver.Chrome(service=Service('C:\Program Files (x86)/chromedriver.exe')) #My driver path
         self.driver.get("http://web.whatsapp.com/")
         self.driver.maximize_window()
         self.driver.implicitly_wait(99)
@@ -44,13 +45,13 @@ class bot():
             
     
     def last_mesage(self):
-        
+        #read the last message 
         messages = self.driver.find_elements(By.XPATH,"//div[starts-with(@data-id ,'false_')]/div[starts-with(@class ,'cvjcv _1Ilru')]/div[@class = 'Nm1g1 _22AX6']/div[@class = '_22Msk']/div[contains(@class , 'copyable-text')]/div[@class = '_1Gy50']/span[@class = 'i0jNr selectable-text copyable-text']/span")
         for message in messages:
             self.msg = message.text
         print(self.msg)    
             
-        #messages = self.driver.find_elements(By.XPATH,"//div[starts-with(@data-id ,'false_')]/div[starts-with(@class ,'cvjcv _1Ilru')]/div[@class = 'Nm1g1 _22AX6']/div[@class = '_22Msk']/div[contains(@class , 'copyable-text')]/div[@class = '_1Gy50']/span[@class = 'i0jNr selectable-text copyable-text']/span/a")
+       
             
     
         
@@ -71,7 +72,7 @@ class bot():
                 }
                 with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                     ydl.download([link])
-                    
+                    #Change to your path
                     file_path = 'C:\\Users\\Pedro\\OneDrive\\Área de Trabalho\\whatazap bot\\'
 
                     files_to_rename=fnmatch.filter(os.listdir(file_path), '*.mp3')
