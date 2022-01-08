@@ -12,6 +12,7 @@ Modulos used:
 
 
 *** Very import***
+
 I made my bot working in my computer, things like file paths and language
 
 I am a brasilian so i made the seleiun find elemets with text in portuguese and send messages in Portuguese 
